@@ -79,10 +79,6 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="bg-white p-12 rounded-xl shadow-sm max-w-[1400px] mx-auto">
-          <Link href="/" className="block text-center mb-12">
-            <h1 className="text-4xl font-serif text-gray-800 hover:text-gray-600 transition-colors">NY Times Best Sellers</h1>
-          </Link>
-
           <Suspense
             fallback={
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Playfair_Display } from "next/font/google";
+import ScrollProgress from "./ScrollProgress";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
@@ -10,7 +11,7 @@ function Header() {
         <div className="flex justify-between items-center px-4 sm:px-6 lg:px-8 h-16">
           <Link
             href="/"
-            className={`text-xl font-semibold text-gray-800 hover:text-gray-600 
+            className={`text-3xl sm:text-4xl font-semibold text-gray-800 hover:text-gray-600 
                        transition-colors duration-200 ${playfair.className}`}
           >
             NY Times Best Sellers
@@ -43,17 +44,7 @@ function Header() {
           </nav>
         </div>
       </div>
-      <div className="h-1 bg-gray-100">
-        <div
-          className="h-full bg-blue-500 transition-all duration-200"
-          style={{
-            width:
-              typeof window !== "undefined"
-                ? `${(window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100}%`
-                : "0%",
-          }}
-        />
-      </div>
+      <ScrollProgress />
     </header>
   );
 }
